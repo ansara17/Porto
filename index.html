@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Qisti Ansa Ramadhan | Operations Systems Portfolio</title>
+  <meta name="description" content="Administrative & Operations Systems Specialist portfolio focused on workflow optimization, data systems, administrative operations, financial administration, and IT support." />
+
+  <style>
+    :root {
+      --ink: #111827;
+      --muted: #5b6472;
+      --soft: #f6f7f9;
+      --line: #e5e7eb;
+      --dark: #070b12;
+      --dark2: #111827;
+      --white: #ffffff;
+      --radius: 20px;
+      --shadow: 0 24px 70px rgba(17, 24, 39, 0.10);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--ink);
+    }
+
+    .hero {
+      background:
+        radial-gradient(circle at 16% 10%, rgba(255,255,255,0.14), transparent 24%),
+        radial-gradient(circle at 85% 25%, rgba(255,255,255,0.08), transparent 20%),
+        linear-gradient(135deg, var(--dark), var(--dark2));
+      color: white;
+      padding: 96px 0 86px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 12px;
+      color: #9ca3af;
+      font-weight: 800;
+    }
+
+    .hero h1 {
+      margin: 18px 0 22px;
+      max-width: 920px;
+      font-size: clamp(38px, 6vw, 68px);
+      line-height: 1.02;
+      letter-spacing: -0.06em;
+    }
+
+    .lead {
+      max-width: 800px;
+      margin: 0;
+      color: #cbd5e1;
+      font-size: clamp(18px, 2vw, 22px);
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 34px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 14px;
+      border: 1px solid transparent;
+      transition: 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: white;
+      color: #111827;
+    }
+
+    .btn-secondary {
+      border-color: rgba(255,255,255,0.3);
+      color: white;
+      background: transparent;
+    }
+
+    .btn-dark {
+      background: #111827;
+      color: white;
+      border-color: #111827;
+    }
+
+    .btn-outline {
+      border-color: var(--line);
+      background: white;
+      color: var(--ink);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .section {
+      padding: 82px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-soft {
+      background: var(--soft);
+    }
+
+    .section-title {
+      display: grid;
+      grid-template-columns: 235px 1fr;
+      gap: 44px;
+      align-items: start;
+    }
+
+    .section-title h2 {
+      margin: 0;
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #6b7280;
+    }
+
+    .copy {
+      max-width: 810px;
+    }
+
+    .copy h3 {
+      margin: 0 0 14px;
+      font-size: clamp(26px, 3vw, 38px);
+      line-height: 1.12;
+      letter-spacing: -0.04em;
+    }
+
+    .copy p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .metric-card {
+      background: white;
+      padding: 28px;
+      min-height: 150px;
+    }
+
+    .metric-card strong {
+      display: block;
+      font-size: clamp(31px, 4vw, 46px);
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+
+    .metric-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card,
+    .case,
+    .impact-item,
+    .deck-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      transition: 0.25s ease;
+    }
+
+    .card {
+      padding: 26px;
+    }
+
+    .card:hover,
+    .case:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      letter-spacing: -0.02em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .case-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .case {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 30px;
+      padding: 30px;
+    }
+
+    .case-num {
+      font-size: 13px;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 800;
+    }
+
+    .case h3 {
+      margin: 0 0 12px;
+      font-size: 22px;
+      letter-spacing: -0.03em;
+    }
+
+    .insight {
+      font-weight: 850;
+      font-size: 17px;
+      line-height: 1.45;
+      margin: 0 0 12px;
+      color: var(--ink);
+    }
+
+    .case p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .impact-item {
+      padding: 28px;
+    }
+
+    .impact-item strong {
+      display: block;
+      font-size: 20px;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .impact-item p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .tool-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tool {
+      border: 1px solid var(--line);
+      background: white;
+      padding: 9px 13px;
+      border-radius: 999px;
+      font-size: 14px;
+      color: #374151;
+    }
+
+    .deck-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .deck-card {
+      padding: 34px;
+      box-shadow: 0 12px 38px rgba(17,24,39,0.06);
+      margin-bottom: 22px;
+    }
+
+    .deck-card h3 {
+      margin: 0 0 20px;
+      font-size: 28px;
+      line-height: 1.15;
+      letter-spacing: -0.04em;
+    }
+
+    .deck-row {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 18px;
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .deck-row:first-of-type {
+      border-top: none;
+    }
+
+    .deck-row strong {
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #6b7280;
+    }
+
+    .deck-row p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .cta {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 76px 0;
+    }
+
+    .cta h2 {
+      margin: 0 0 16px;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+    }
+
+    .cta p {
+      margin: 0 auto;
+      color: #cbd5e1;
+      max-width: 650px;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .footer {
+      padding: 28px 0;
+      color: #94a3b8;
+      font-size: 14px;
+      background: var(--dark);
+      border-top: 1px solid #1f2937;
+    }
+
+    .footer .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 860px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 76px 0 64px;
+      }
+
+      .section-title {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .metrics {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .case {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .impact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .deck-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container {
+        width: min(100% - 28px, 1120px);
+      }
+
+      .metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions,
+      .cta-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+
+    @media print {
+      body.print-deck .no-print {
+        display: none !important;
+      }
+
+      body.print-deck #case-deck {
+        display: block !important;
+        padding: 0;
+        border: none;
+      }
+
+      body.print-deck .container {
+        width: 100%;
+      }
+
+      body.print-deck .deck-card {
+        box-shadow: none;
+        border: 1px solid #d1d5db;
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+
+      body.print-deck .deck-header button {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="nav no-print">
+    <div class="container nav-inner">
+      <a class="brand" href="#">Qisti Ansa Ramadhan</a>
+      <div class="nav-links">
+        <a href="#capabilities">Capabilities</a>
+        <a href="#cases">Case Studies</a>
+        <a href="#impact">Impact</a>
+        <a href="#case-deck">Case Deck</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero no-print">
+    <div class="container reveal">
+      <div class="eyebrow">Operations Systems Portfolio</div>
+      <h1>Improving administrative workflows through structured systems.</h1>
+      <p class="lead">
+        Administrative & Operations Systems Specialist focused on back-office operations, data management,
+        workflow optimization, financial administration, and practical digital systems.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#cases">View Case Studies</a>
+        <a class="btn btn-secondary" href="#case-deck">Open Case Deck</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="section section-soft no-print">
+    <div class="container">
+      <div class="metrics reveal">
+        <div class="metric-card">
+          <strong data-count="8">0</strong>
+          <span>Years cross-industry operations experience</span>
+        </div>
+        <div class="metric-card">
+          <strong data-count="130">0</strong>
+          <span>Active records managed in education operations</span>
+        </div>
+        <div class="metric-card">
+          <strong data-count="12">0</strong>
+          <span>Teachers supported through systems and workflows</span>
+        </div>
+        <div class="metric-card">
+          <strong data-count="4">0</strong>
+          <span>Core domains: admin, data, finance, IT</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section no-print" id="capabilities">
+    <div class="container section-title reveal">
+      <h2>Core Capabilities</h2>
+      <div class="copy">
+        <h3>From daily operations to structured workflow improvement.</h3>
+        <p>
+          My work focuses on identifying manual inefficiencies, organizing scattered data,
+          standardizing recurring documents, and improving operational reliability through practical systems.
+        </p>
+      </div>
+    </div>
+
+    <div class="container" style="margin-top: 34px;">
+      <div class="grid-3 reveal">
+        <div class="card">
+          <h3>Administrative Operations</h3>
+          <p>Back-office workflows, document control, records management, data validation, and structured reporting.</p>
+        </div>
+
+        <div class="card">
+          <h3>Workflow Optimization</h3>
+          <p>Process standardization, digital filing structures, templates, and efficiency improvement for recurring tasks.</p>
+        </div>
+
+        <div class="card">
+          <h3>Data & Systems Management</h3>
+          <p>Dapodik operations, internal database structuring, data cleanup, system documentation, and user access flow.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft no-print" id="cases">
+    <div class="container section-title reveal">
+      <h2>Selected Case Studies</h2>
+      <div class="copy">
+        <h3>Operational problems reframed into structured improvement cases.</h3>
+        <p>
+          These cases show how manual, fragmented workflows were converted into clearer systems
+          that improved speed, accuracy, and accessibility.
+        </p>
+      </div>
+    </div>
+
+    <div class="container" style="margin-top: 36px;">
+      <div class="case-list reveal">
+        <article class="case">
+          <div class="case-num">Case 01</div>
+          <div>
+            <h3>School Data System Optimization</h3>
+            <p class="insight">Fragmented administrative data reduces retrieval speed and increases error risk.</p>
+            <p>Reorganized scattered records into structured folders, standardized templates, and validated active data for approximately 120–130 records.</p>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="case-num">Case 02</div>
+          <div>
+            <h3>Financial Administration Workflow</h3>
+            <p class="insight">Financial reporting improves when budgeting, bookkeeping, and realization cycles follow one consistent workflow.</p>
+            <p>Managed ARKAS operations including budgeting input, BKU, realization tracking, closing processes, and reporting support.</p>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="case-num">Case 03</div>
+          <div>
+            <h3>Internal Academic Database</h3>
+            <p class="insight">Centralized access improves collaboration and reduces dependency on scattered files.</p>
+            <p>Built a lightweight HTML + Firebase database enabling multi-user access for academic data across desktop and mobile devices.</p>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="case-num">Case 04</div>
+          <div>
+            <h3>Document Workflow Standardization</h3>
+            <p class="insight">Standard templates reduce repetitive work and improve consistency of administrative outputs.</p>
+            <p>Converted recurring manual document creation into standardized templates, reducing several tasks from hours to approximately 30–60 minutes.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section no-print" id="impact">
+    <div class="container section-title reveal">
+      <h2>Operational Impact</h2>
+      <div class="copy">
+        <h3>Measured through speed, structure, continuity, and user accessibility.</h3>
+      </div>
+    </div>
+
+    <div class="container" style="margin-top: 34px;">
+      <div class="impact-grid reveal">
+        <div class="impact-item">
+          <strong>Days to hours</strong>
+          <p>Reduced several manual administrative workflows into same-day or hour-based completion.</p>
+        </div>
+
+        <div class="impact-item">
+          <strong>30–60 minutes</strong>
+          <p>Improved recurring document creation speed through standardized templates and organized workflows.</p>
+        </div>
+
+        <div class="impact-item">
+          <strong>Centralized access</strong>
+          <p>Replaced scattered files with structured repositories and internal database access for users.</p>
+        </div>
+
+        <div class="impact-item">
+          <strong>Continuity</strong>
+          <p>Created systems and templates that remained usable by teachers and the next operator after transition.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft no-print">
+    <div class="container section-title reveal">
+      <h2>Tools & Systems</h2>
+      <div class="copy">
+        <h3>Practical tools for real operational work.</h3>
+        <div class="tool-list" style="margin-top: 20px;">
+          <span class="tool">Microsoft Excel</span>
+          <span class="tool">Microsoft Word</span>
+          <span class="tool">Google Workspace</span>
+          <span class="tool">Google Forms</span>
+          <span class="tool">Google Sheets</span>
+          <span class="tool">Dapodik</span>
+          <span class="tool">ARKAS</span>
+          <span class="tool">Firebase</span>
+          <span class="tool">HTML</span>
+          <span class="tool">Basic Apps Script</span>
+          <span class="tool">IT Support</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="case-deck">
+    <div class="container">
+      <div class="deck-header reveal">
+        <div>
+          <div class="eyebrow">Executive Case Deck</div>
+          <h2 style="font-size: clamp(28px, 4vw, 44px); line-height: 1.08; letter-spacing: -0.05em; margin: 14px 0 0;">
+            Operations improvement summary.
+          </h2>
+        </div>
+
+        <button class="btn btn-dark" onclick="printDeck()">Save Deck as PDF</button>
+      </div>
+
+      <div class="deck-card reveal">
+        <h3>Executive Summary</h3>
+        <div class="deck-row">
+          <strong>Profile</strong>
+          <p>Administrative & Operations Systems Specialist with 8+ years of cross-industry operational experience.</p>
+        </div>
+        <div class="deck-row">
+          <strong>Focus</strong>
+          <p>Back-office operations, data management, financial administration, workflow optimization, and IT support.</p>
+        </div>
+        <div class="deck-row">
+          <strong>Value</strong>
+          <p>Transforms manual workflows into structured digital systems that improve speed, accuracy, accessibility, and continuity.</p>
+        </div>
+      </div>
+
+      <div class="deck-card reveal">
+        <h3>Operating Context</h3>
+        <div class="metrics" style="box-shadow: none;">
+          <div class="metric-card">
+            <strong>8+</strong>
+            <span>Years experience</span>
+          </div>
+          <div class="metric-card">
+            <strong>120–130</strong>
+            <span>Active records managed</span>
+          </div>
+          <div class="metric-card">
+            <strong>12</strong>
+            <span>Teachers supported</span>
+          </div>
+          <div class="metric-card">
+            <strong>4</strong>
+            <span>Core operating domains</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="deck-card reveal">
+        <h3>Case 01 — Data System Transformation</h3>
+        <div class="deck-row">
+          <strong>Insight</strong>
+          <p>Fragmented administrative data reduces retrieval speed, increases error risk, and slows operational decisions.</p>
+        </div>
+        <div class="deck-row">
+          <strong>Challenge</strong>
+          <p>Student and administrative records were spread across files with inconsistent structure and limited accessibility.</p>
+        </div>
+        <div class="deck-row">
+          <strong>Approach</strong>
+          <p>Rebuilt data organization using folder hierarchy, standardized templates, data cleanup, and routine validation.</p>
+        </div>
+        <div class="deck-row">
+          <strong>Outcome</strong>
+          <p>Improved data retrieval speed, consistency, and operational reliability for administrative workflows.</p>
+        </div>
+      </div>
+
+      <div class="deck-card reveal">
+        <h3>Case 02 — Financial Workflow Operations</h3>
+        <div class="deck-row">
+          <strong>Insight</strong>
+          <p>Financial reporting becomes more reliable when budgeting, bookkeeping, realization, and closing follow one structured cycle.</p>
+        </div>
+        <div class="deck-row">
+          <strong>Challenge</strong>
+          <p>Financial administration required accuracy, documentation discipline, and consistency across reporting cycles.</p>
+        </div>
+        <div class="deck-row">
+          <strong>Approach</strong>
+          <p>Handled ARKAS workflow including budgeting input, BKU, realization tracking, closing processes, and reporting support.</p>
+        </div>
+        <div class="deck-row">
+          <strong>Outcome</strong>
+          <p>Improved clarity and structure in financial administration and reporting preparation.</p>
+        </div>
+      </div>
+
+      <div class="deck-card reveal">
+        <h3>Case 03 — Internal Academic Database</h3>
+        <div class="deck-row">
+          <strong>Insight</strong>
+          <p>Centralized access reduces dependency on scattered files and improves collaboration across users.</p>
+        </div>
+        <div class="deck-row">
+          <strong>Challenge</strong>
+          <p>Academic data needed to be accessible by multiple users across devices without relying on manual file exchange.</p>
+        </div>
+        <div class="deck-row">
+          <strong>Approach</strong>
+          <p>Developed a lightweight HTML + Firebase database to centralize grade data and enable desktop/mobile access.</p>
+        </div>
+        <div class="deck-row">
+          <strong>Outcome</strong>
+          <p>Improved accessibility, collaboration, and continuity of academic data management.</p>
+        </div>
+      </div>
+
+      <div class="deck-card reveal">
+        <h3>Case 04 — Document Workflow Standardization</h3>
+        <div class="deck-row">
+          <strong>Insight</strong>
+          <p>Recurring administrative tasks become faster and more consistent when document templates are standardized.</p>
+        </div>
+        <div class="deck-row">
+          <strong>Challenge</strong>
+          <p>Manual document creation caused repetitive work, inconsistent formatting, and longer completion time.</p>
+        </div>
+        <div class="deck-row">
+          <strong>Approach</strong>
+          <p>Created reusable templates, folder hierarchy, and structured workflow for recurring administrative outputs.</p>
+        </div>
+        <div class="deck-row">
+          <strong>Outcome</strong>
+          <p>Reduced several tasks from hours to approximately 30–60 minutes and improved consistency of output.</p>
+        </div>
+      </div>
+
+      <div class="deck-card reveal">
+        <h3>Executive Recommendation</h3>
+        <div class="deck-row">
+          <strong>1</strong>
+          <p>Replace fragmented manual workflows with structured digital documentation and data repositories.</p>
+        </div>
+        <div class="deck-row">
+          <strong>2</strong>
+          <p>Standardize recurring templates to reduce repetitive work, format inconsistency, and processing time.</p>
+        </div>
+        <div class="deck-row">
+          <strong>3</strong>
+          <p>Centralize operational data access to improve user collaboration, continuity, and decision speed.</p>
+        </div>
+        <div class="deck-row">
+          <strong>4</strong>
+          <p>Use lightweight digital tools where they solve real operational bottlenecks without creating unnecessary system complexity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta no-print" id="contact">
+    <div class="container reveal">
+      <h2>Open for corporate operations and education operations roles.</h2>
+      <p>
+        Focus areas: administrative operations, back-office support, data operations,
+        workflow improvement, office administration, and operations support.
+      </p>
+
+      <div class="cta-actions">
+        <a class="btn btn-primary" href="#case-deck">View Case Deck</a>
+        <a class="btn btn-secondary" href="mailto:your.email@example.com">Contact Me</a>
+      </div>
+
+      <p style="margin-top: 18px; font-size: 14px; color: #94a3b8;">
+        Replace this email with your professional email before publishing.
+      </p>
+    </div>
+  </section>
+
+  <footer class="footer no-print">
+    <div class="container">
+      <span>© Qisti Ansa Ramadhan</span>
+      <span>Administrative & Operations Systems Specialist</span>
+    </div>
+  </footer>
+
+  <script>
+    const revealItems = document.querySelectorAll(".reveal");
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    }, { threshold: 0.14 });
+
+    revealItems.forEach(item => revealObserver.observe(item));
+
+    const counters = document.querySelectorAll("[data-count]");
+
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+
+        const el = entry.target;
+        const target = Number(el.dataset.count);
+        const suffix = target === 8 ? "+" : "";
+        const duration = 900;
+        const start = performance.now();
+
+        const tick = (now) => {
+          const progress = Math.min((now - start) / duration, 1);
+          el.textContent = Math.floor(progress * target) + suffix;
+
+          if (progress < 1) {
+            requestAnimationFrame(tick);
+          } else {
+            el.textContent = target + suffix;
+          }
+        };
+
+        requestAnimationFrame(tick);
+        counterObserver.unobserve(el);
+      });
+    }, { threshold: 0.65 });
+
+    counters.forEach(counter => counterObserver.observe(counter));
+
+    function printDeck() {
+      document.body.classList.add("print-deck");
+      window.print();
+
+      setTimeout(() => {
+        document.body.classList.remove("print-deck");
+      }, 500);
+    }
+  </script>
+</body>
+</html>
