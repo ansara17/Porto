@@ -924,7 +924,7 @@
 
         const el = entry.target;
         const target = Number(el.dataset.count);
-        const suffix = target === 8 ? "+" : "";
+        const suffix = el.dataset.suffix || "";
         const duration = 900;
         const start = performance.now();
 
