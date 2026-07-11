@@ -523,7 +523,16 @@ ol {
   color: #94a3b8;
   font-size: 13px;
 }
+.hero-note a {
+  color: var(--white);
+  font-weight: 750;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
 
+.hero-note a:hover {
+  opacity: 0.8;
+}
 /* ---------- Sections ---------- */
 
 .section {
