@@ -1,4 +1,4 @@
-# Qisti Ansa Ramadhan â€” Portfolio
+# Qisti Ansa Ramadhan &mdash; Portfolio
 
 Portfolio bilingual untuk:
 
@@ -8,10 +8,10 @@ Portfolio bilingual untuk:
 
 ## Halaman
 
-- `index.html` â€” English portfolio
-- `id.html` â€” Portofolio Bahasa Indonesia
-- `case-deck.html` â€” English case studies
-- `case-deck-id.html` â€” Studi kasus Bahasa Indonesia
+- `index.html` &mdash; English portfolio
+- `id.html` &mdash; Portofolio Bahasa Indonesia
+- `case-deck.html` &mdash; English case studies
+- `case-deck-id.html` &mdash; Studi kasus Bahasa Indonesia
 
 ## Struktur CV
 

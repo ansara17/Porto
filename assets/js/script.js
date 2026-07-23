@@ -169,7 +169,7 @@ function initRevealAnimations() {
     data-target="9"
     data-suffix="+"
   >
-    9+
+    8+
   </strong>
 
   Nilai asli tetap ditulis di HTML.
