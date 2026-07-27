@@ -1696,3 +1696,57 @@ ol {
     page-break-after: avoid;
   }
 }
+
+/* =========================================================
+   HERO PROFILE PHOTO
+   ========================================================= */
+
+.hero .hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(260px, 0.55fr);
+  align-items: center;
+  gap: clamp(2rem, 6vw, 5rem);
+}
+
+.hero-photo-wrap {
+  width: 100%;
+  max-width: 380px;
+  margin: 0;
+  justify-self: end;
+}
+
+.hero-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.3),
+    0 0 0 8px rgba(255, 255, 255, 0.03);
+}
+
+@media (max-width: 820px) {
+  .hero .hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-photo-wrap {
+    width: min(100%, 320px);
+    margin-inline: auto;
+    justify-self: center;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero-photo-wrap {
+    width: min(82%, 280px);
+  }
+
+  .hero-photo {
+    border-radius: 20px;
+  }
+}
